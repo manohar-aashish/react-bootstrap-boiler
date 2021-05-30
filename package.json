@@ -1,0 +1,19 @@
+{
+  "name": "react-bootstrap-boiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manohar-aashish/react-bootstrap-boiler.git"
+  },
+  "author": "Aashish Manohar Varlani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manohar-aashish/react-bootstrap-boiler/issues"
+  },
+  "homepage": "https://github.com/manohar-aashish/react-bootstrap-boiler#readme"
+}
