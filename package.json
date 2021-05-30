@@ -4,10 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./src/static/css && rm -rf ./build && rm -rf ./node_modules",
+    "prebuild": "npm install --only=prod && npm run sassCompressed",
+    "build": "webpack --config webpack/webpack.config.js --env env=prod",
+    "predev": "npm run sassExpanded",
+    "dev": "webpack --config webpack/webpack.config.js --env env=dev",
+    "postdev": "npm run serveBuild",
+    "format": "prettier --write \"./**/*.{js,jsx,css,scss,json}\"",
+    "lint": "eslint --fix \"./**/*.{js,jsx,json}\"",
     "sassCompressed": "sass --quiet --style=compressed ./src/sass:./src/static/css",
     "sassExpanded": "sass --trace --color --no-source-map  --style=expanded ./src/sass:./src/static/css",
     "sassWatch": "sass --watch --no-source-map --color ./src/sass:./src/static/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serveBuild": "serve ./build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpackDev": "webpack serve --config webpack/webpack.config.js --env env=dev --progress --profile --content-base ./src/"
   },
   "repository": {
     "type": "git",
